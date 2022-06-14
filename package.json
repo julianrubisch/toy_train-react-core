@@ -1,6 +1,6 @@
 {
-  "name": "@toy_train/react-core",
-  "version": "0.1.0",
+  "name": "@julianrubisch/react-core",
+  "version": "0.1.5",
   "description": "ToyTrain React base components",
   "source": "index.tsx",
   "main": "./dist/index.umd.js",
@@ -13,22 +13,24 @@
       "require": "./dist/index.umd.js"
     }
   },
-  "repository": "https://github.com/julianrubisch/toy_train-games",
+  "repository": "https://github.com/julianrubisch/toy_train-games.git",
   "types": "dist/dist/index.d.ts",
   "typings": "dist/dist/index.d.ts",
   "author": "Julian Rubisch",
   "license": "UNLICENSED",
   "publishConfig": {
-    "access": "private"
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
   },
   "files": [
     "dist"
   ],
-  "private": true,
   "scripts": {
     "clean": "rm -rf dist",
     "build": "yarn run clean && rollup -c",
-    "build:watch": "yarn run clean && rollup -wc"
+    "build:watch": "yarn run clean && rollup -wc",
+    "push": "yarn publish --no-git-tag-version",
+    "postinstall": "yarn install && yarn build"
   },
   "peerDependencies": {
     "framer-motion": "^6.3.11",
