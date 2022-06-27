@@ -1,25 +1,16 @@
 import * as React from "react";
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import { Howl, Howler, HowlOptions } from "howler";
 
-interface ToyTrainButtonProps {
-  styles: ToyTrainButtonStyles;
-  sound?: HowlOptions;
-  onClick?: () => void;
-}
+import { ToyTrainTheme, ToyTrainDefaultTheme } from "../index";
 
-interface ToyTrainButtonStyles {
+interface ToyTrainButtonProps {
   x?: number;
   y?: number;
   width?: number;
-  padding?: string;
-  background?: string;
-  color?: string;
-  fontFamily?: string;
-  fontSize?: string;
-  fontWeight?: string;
-  border?: string;
-  borderRadius?: string;
+  theme: ToyTrainTheme;
+  sound?: HowlOptions;
+  onClick?: () => void;
 }
 
 interface ToyTrainButtonState {
@@ -27,7 +18,7 @@ interface ToyTrainButtonState {
   sound?: Howl;
 }
 
-export type { ToyTrainButtonStyles, ToyTrainButtonProps };
+export type { ToyTrainButtonProps };
 
 export default class ToyTrainButton extends React.Component<
   ToyTrainButtonProps,
@@ -49,54 +40,56 @@ export default class ToyTrainButton extends React.Component<
     const release = () => {
       this.setState({ pressed: false });
     };
+    const theme = this.props.theme || ToyTrainDefaultTheme;
 
     return (
-      <ButtonElement
-        onClick={this.props.onClick}
-        onMouseDown={() => {
-          press();
-        }}
-        onMouseUp={() => {
-          release();
-        }}
-        onMouseLeave={() => {
-          release();
-        }}
-        onTouchStart={() => {
-          press();
-        }}
-        onTouchEnd={() => {
-          release();
-        }}
-        onTouchCancel={() => {
-          release();
-        }}
-        x={this.props.styles.x}
-        y={this.props.styles.y}
-        width={this.props.styles.width}
-        padding={this.props.styles.padding}
-        pressed={this.state.pressed}
-      >
-        {this.props.children}
-      </ButtonElement>
+      <ThemeProvider theme={theme}>
+        <ButtonElement
+          onClick={this.props.onClick}
+          onMouseDown={() => {
+            press();
+          }}
+          onMouseUp={() => {
+            release();
+          }}
+          onMouseLeave={() => {
+            release();
+          }}
+          onTouchStart={() => {
+            press();
+          }}
+          onTouchEnd={() => {
+            release();
+          }}
+          onTouchCancel={() => {
+            release();
+          }}
+          x={this.props.x}
+          y={this.props.y}
+          width={this.props.width}
+          pressed={this.state.pressed}
+        >
+          {this.props.children}
+        </ButtonElement>
+      </ThemeProvider>
     );
   }
 }
 
-const ButtonElement = styled.button<
-  ToyTrainButtonStyles & { pressed: boolean }
->`
-  background: ${(props) => props.background || "white"}
-  color: ${(props) => props.color || "black"};
-  border: ${(props) => props.border || "10px solid #b3b3b3"};
-  border-radius: ${(props) => props.borderRadius || "0px"};
+const ButtonElement = styled.button<ToyTrainButtonProps & { pressed: boolean }>`
+  background: ${(props) =>
+    props.theme.button.background || props.theme.palette.background};
+  color: ${(props) => props.theme.button.color || props.theme.palette.text};
+  border: ${(props) =>
+    props.theme.button.border ||
+    `10px solid ${props.theme.palette.buttonBorder}`};
+  border-radius: ${(props) => props.theme.button.borderRadius || "0px"};
 
-  padding: ${(props) =>
-    props.padding ? props.padding : "30px 70px 23px 70px"};
+  padding: ${(props) => props.theme.button.padding || "30px 70px 23px 70px"};
 
-  font-family: ${(props) => props.fontFamily || "sans-serif"};
-  font-size: ${(props) => props.fontSize || "40px"};
-  font-weight: ${(props) => props.fontWeight || "normal"};
+  font-family: ${(props) => props.theme.button.fontFamily || "sans-serif"};
+  font-size: ${(props) => props.theme.button.fontSize || "40px"};
+  font-weight: ${(props) => props.theme.button.fontWeight || "normal"};
 
   display: inline-block;
 
