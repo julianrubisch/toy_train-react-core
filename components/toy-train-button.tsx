@@ -18,7 +18,7 @@ interface ToyTrainButtonState {
   sound?: Howl;
 }
 
-export type { ToyTrainButtonProps };
+export type { ToyTrainButtonProps, ToyTrainButtonState };
 
 export default class ToyTrainButton extends React.Component<
   ToyTrainButtonProps,
@@ -86,6 +86,7 @@ const ButtonElement = styled.button<ToyTrainButtonProps & { pressed: boolean }>`
   border-radius: ${(props) => props.theme.button.borderRadius || "0px"};
 
   padding: ${(props) => props.theme.button.padding || "30px 70px 23px 70px"};
+  margin: ${(props) => props.theme.button.margin || "0px"};
 
   font-family: ${(props) => props.theme.button.fontFamily || "sans-serif"};
   font-size: ${(props) => props.theme.button.fontSize || "40px"};
@@ -101,10 +102,11 @@ const ButtonElement = styled.button<ToyTrainButtonProps & { pressed: boolean }>`
     props.x !== undefined && props.y !== undefined ? props.y : undefined}px;
 
   width: ${(props) =>
-    props.width !== undefined ? `${props.width - 54 * 2}px` : undefined};
+    props.width !== undefined ? `${props.width}px` : undefined};
 
   text-align: center;
 
+  opacity: ${(props) => props.theme.button.opacity || 1};
   transform: scale(${(props) => (props.pressed === true ? 0.9 : 1)});
   transition: 0.1s all;
 `;

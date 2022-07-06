@@ -1,7 +1,10 @@
 import * as React from "react";
 
 import { defaultTheme as ToyTrainDefaultTheme } from "./default-theme";
-import ToyTrainButton from "./components/toy-train-button";
+import ToyTrainButton, {
+  ToyTrainButtonProps,
+  ToyTrainButtonState,
+} from "./components/toy-train-button";
 
 enum GameState {
   Preloading,
@@ -31,17 +34,17 @@ interface ThemeButtonStyles {
   border?: string;
   borderRadius?: string;
   padding?: string;
+  margin?: string;
   fontFamily?: string;
   fontSize?: string;
   fontWeight?: string;
+  opacity?: string;
 }
 
 interface ThemePaletteStyles {
   text: string;
   background: string;
   accent: string;
-  buttonBorder: string;
-  wrongAnswer: string;
 }
 
 export interface ToyTrainTheme {
@@ -49,6 +52,12 @@ export interface ToyTrainTheme {
   palette: ThemePaletteStyles;
 }
 
-export type { GameScore, GameState, State };
+export type {
+  GameScore,
+  GameState,
+  State,
+  ToyTrainButtonProps,
+  ToyTrainButtonState,
+};
 
 export { ToyTrainButton, ToyTrainDefaultTheme };

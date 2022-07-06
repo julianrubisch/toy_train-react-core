@@ -13,6 +13,5 @@ export const defaultTheme: DefaultTheme = {
     background: "white",
     accent: "red",
     buttonBorder: "lightgray",
-    wrongAnswer: "red",
   },
 };
