@@ -5,6 +5,10 @@ import ToyTrainButton, {
   ToyTrainButtonProps,
   ToyTrainButtonState,
 } from "./components/toy-train-button";
+import ToyTrainTimer, {
+  ToyTrainTimerProps,
+  ToyTrainTimerState,
+} from "./components/toy-train-timer";
 
 enum GameState {
   Preloading,
@@ -41,6 +45,13 @@ interface ThemeButtonStyles {
   opacity?: string;
 }
 
+interface ThemeTimerStyles {
+  background?: string;
+  color?: string;
+  fontFamily?: string;
+  fontSize?: string;
+}
+
 interface ThemePaletteStyles {
   text: string;
   background: string;
@@ -49,6 +60,7 @@ interface ThemePaletteStyles {
 
 export interface ToyTrainTheme {
   button: ThemeButtonStyles;
+  timer: ThemeTimerStyles;
   palette: ThemePaletteStyles;
 }
 
@@ -58,6 +70,8 @@ export type {
   State,
   ToyTrainButtonProps,
   ToyTrainButtonState,
+  ToyTrainTimerProps,
+  ToyTrainTimerState,
 };
 
-export { ToyTrainButton, ToyTrainDefaultTheme };
+export { ToyTrainButton, ToyTrainTimer, ToyTrainDefaultTheme };
