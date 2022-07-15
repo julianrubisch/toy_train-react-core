@@ -10,6 +10,8 @@ import ToyTrainTimer, {
   ToyTrainTimerState,
 } from "./components/toy-train-timer";
 
+import ToyTrainFadeTransition from "./components/toy-train-fade-transition";
+
 enum GameState {
   Preloading,
   Title,
@@ -74,4 +76,9 @@ export type {
   ToyTrainTimerState,
 };
 
-export { ToyTrainButton, ToyTrainTimer, ToyTrainDefaultTheme };
+export {
+  ToyTrainButton,
+  ToyTrainTimer,
+  ToyTrainDefaultTheme,
+  ToyTrainFadeTransition,
+};
