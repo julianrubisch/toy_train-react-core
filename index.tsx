@@ -10,6 +10,11 @@ import ToyTrainTimer, {
   ToyTrainTimerState,
 } from "./components/toy-train-timer";
 
+import ToyTrainAnimatedCounter, {
+  ToyTrainAnimatedCounterProps,
+  ToyTrainAnimatedCounterState,
+} from "./components/toy-train-animated-counter";
+
 import ToyTrainFadeTransition from "./components/toy-train-fade-transition";
 import ToyTrainRotateTransition from "./components/toy-train-rotate-transition";
 
@@ -61,9 +66,16 @@ interface ThemePaletteStyles {
   accent: string;
 }
 
+interface ThemeAnimatedCounterStyles {
+  color?: string;
+  fontFamily?: string;
+  fontSize?: string;
+}
+
 export interface ToyTrainTheme {
   button: ThemeButtonStyles;
   timer: ThemeTimerStyles;
+  animatedCounter: ThemeAnimatedCounterStyles;
   palette: ThemePaletteStyles;
 }
 
@@ -75,6 +87,8 @@ export type {
   ToyTrainButtonState,
   ToyTrainTimerProps,
   ToyTrainTimerState,
+  ToyTrainAnimatedCounterProps,
+  ToyTrainAnimatedCounterState,
 };
 
 export {
@@ -83,4 +97,5 @@ export {
   ToyTrainDefaultTheme,
   ToyTrainFadeTransition,
   ToyTrainRotateTransition,
+  ToyTrainAnimatedCounter,
 };

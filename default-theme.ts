@@ -8,6 +8,11 @@ export const defaultTheme: DefaultTheme = {
     borderRadius: "0px",
     padding: "30px 70px 23px 70px",
   },
+  animatedCounter: {
+    color: "black",
+    fontFamily: "sans-serif",
+    fontSize: "300px",
+  },
   palette: {
     text: "black",
     background: "white",
