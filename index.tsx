@@ -11,6 +11,7 @@ import ToyTrainTimer, {
 } from "./components/toy-train-timer";
 
 import ToyTrainFadeTransition from "./components/toy-train-fade-transition";
+import ToyTrainRotateTransition from "./components/toy-train-rotate-transition";
 
 enum GameState {
   Preloading,
@@ -81,4 +82,5 @@ export {
   ToyTrainTimer,
   ToyTrainDefaultTheme,
   ToyTrainFadeTransition,
+  ToyTrainRotateTransition,
 };
