@@ -64,5 +64,8 @@
     "tslint-react": "^5.0.0",
     "typescript": "^4.7.3",
     "zlib": "^1.0.5"
+  },
+  "dependencies": {
+    "@heroicons/react": "^1.0.6"
   }
 }
