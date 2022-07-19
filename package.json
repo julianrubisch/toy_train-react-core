@@ -33,8 +33,10 @@
   },
   "peerDependencies": {
     "framer-motion": "^1.10.3",
+    "fscreen": "^1.2.0",
     "gsap": "^3.2.6",
     "howler": "^2.1.3",
+    "platform-detect": "^3.0.1",
     "react": "^16.12.0",
     "styled-components": "^5.0.1"
   },
@@ -46,8 +48,10 @@
     "@types/react": "^16",
     "@types/react-dom": "^16",
     "framer-motion": "^6.3.11",
+    "fscreen": "^1.2.0",
     "gsap": "^3.2.6",
     "howler": "^2.1.3",
+    "platform-detect": "^3.0.1",
     "prettier": "^2.6.2",
     "react": "^16.12.0",
     "rollup": "^2.75.6",
