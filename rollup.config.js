@@ -1,13 +1,20 @@
 import resolve from "@rollup/plugin-node-resolve";
 import typescript from "@rollup/plugin-typescript";
 import commonjs from "@rollup/plugin-commonjs";
+import image from "@rollup/plugin-image";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import { terser } from "rollup-plugin-terser";
 import { brotliCompressSync } from "zlib";
 import gzipPlugin from "rollup-plugin-gzip";
 
 function basePlugins(tsconfig = "./tsconfig.json") {
-  return [peerDepsExternal(), resolve(), commonjs(), typescript({ tsconfig })];
+  return [
+    peerDepsExternal(),
+    resolve(),
+    commonjs(),
+    image(),
+    typescript({ tsconfig }),
+  ];
 }
 
 function compressionPlugins(tsconfig = "./tsconfig.json") {
