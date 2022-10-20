@@ -2,9 +2,10 @@ import React from "react";
 import styled, { ThemeProvider } from "styled-components";
 import fscreen from "fscreen";
 import platform from "platform-detect";
-import { ArrowsExpandIcon } from "@heroicons/react/outline";
+import { ArrowsPointingOutIcon } from "@heroicons/react/24/outline";
 
 import ToyTrainButton from "./toy-train-button";
+import MobileSafariFullscreenManualScreen from "./mobile-safari-fullscreen-manual-screen";
 import { ToyTrainTheme, ToyTrainDefaultTheme } from "../index";
 
 interface ToyTrainFullscreenProps {
@@ -73,12 +74,24 @@ export default class ToyTrainFullscreen extends React.Component<
                   {this.props.buttonImage ? (
                     <Icon src={this.props.buttonImage} />
                   ) : (
-                    <ArrowsExpandIcon />
+                    <ArrowsPointingOutIcon />
                   )}
                 </FullscreenButtonContent>
               </ToyTrainButton>
             </FullscreenButton>
           )}
+          {!fscreen.fullscreenEnabled &&
+            platform.ios &&
+            platform.safari &&
+            !platform.chrome &&
+            !this.state.dismissedOverlay && (
+              <MobileSafariFullscreenManualScreen
+                theme={theme}
+                onFinished={() => {
+                  this.setState({ dismissedOverlay: true });
+                }}
+              />
+            )}
         </Container>
       </ThemeProvider>
     );

@@ -54,11 +54,14 @@ interface ThemeButtonStyles {
   opacity?: string;
 }
 
-interface ThemeTimerStyles {
-  background?: string;
+interface ThemeTextStyles {
   color?: string;
   fontFamily?: string;
   fontSize?: string;
+}
+
+interface ThemeTimerStyles extends ThemeTextStyles {
+  background?: string;
 }
 
 interface ThemePaletteStyles {
@@ -67,16 +70,11 @@ interface ThemePaletteStyles {
   accent: string;
 }
 
-interface ThemeAnimatedCounterStyles {
-  color?: string;
-  fontFamily?: string;
-  fontSize?: string;
-}
-
 export interface ToyTrainTheme {
   button: ThemeButtonStyles;
+  text: ThemeTextStyles;
   timer: ThemeTimerStyles;
-  animatedCounter: ThemeAnimatedCounterStyles;
+  animatedCounter: ThemeTextStyles;
   palette: ThemePaletteStyles;
 }
 
