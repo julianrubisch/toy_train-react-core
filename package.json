@@ -1,6 +1,6 @@
 {
   "name": "@julianrubisch/react-core",
-  "version": "0.1.16",
+  "version": "0.1.18",
   "description": "ToyTrain React base components",
   "source": "index.tsx",
   "main": "./dist/index.umd.js",
@@ -67,6 +67,6 @@
     "zlib": "^1.0.5"
   },
   "dependencies": {
-    "@heroicons/react": "^1.0.6"
+    "@heroicons/react": "^2.0.0"
   }
 }
