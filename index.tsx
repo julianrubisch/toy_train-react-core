@@ -10,14 +10,18 @@ import ToyTrainTimer, {
   ToyTrainTimerState,
 } from "./components/toy-train-timer";
 
+import ToyTrainContainer, {
+  ToyTrainContainerState,
+} from "./components/toy-train-container";
+
 import ToyTrainAnimatedCounter, {
   ToyTrainAnimatedCounterProps,
   ToyTrainAnimatedCounterState,
 } from "./components/toy-train-animated-counter";
 
 import ToyTrainFadeTransition from "./components/toy-train-fade-transition";
-import ToyTrainRotateTransition from "./components/toy-train-rotate-transition";
 import ToyTrainFullscreen from "./components/toy-train-fullscreen";
+import ToyTrainRotateTransition from "./components/toy-train-rotate-transition";
 
 enum GameState {
   Preloading,
@@ -88,6 +92,7 @@ export type {
   ToyTrainTimerState,
   ToyTrainAnimatedCounterProps,
   ToyTrainAnimatedCounterState,
+  ToyTrainContainerState,
 };
 
 export {
@@ -98,4 +103,5 @@ export {
   ToyTrainRotateTransition,
   ToyTrainAnimatedCounter,
   ToyTrainFullscreen,
+  ToyTrainContainer,
 };
