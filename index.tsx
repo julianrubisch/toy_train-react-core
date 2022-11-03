@@ -22,6 +22,7 @@ import ToyTrainAnimatedCounter, {
 import ToyTrainFadeTransition from "./components/toy-train-fade-transition";
 import ToyTrainFullscreen from "./components/toy-train-fullscreen";
 import ToyTrainRotateTransition from "./components/toy-train-rotate-transition";
+import ToyTrainPreloaderWidget from "./components/preloader/toy-train-preloader-widget";
 
 enum GameState {
   Preloading,
@@ -104,4 +105,5 @@ export {
   ToyTrainAnimatedCounter,
   ToyTrainFullscreen,
   ToyTrainContainer,
+  ToyTrainPreloaderWidget,
 };
