@@ -3,20 +3,20 @@ import styled from "styled-components";
 
 // https://developer.mozilla.org/en-US/docs/Web/API/FontFace/FontFace
 
-export interface FontDefinition {
+export interface ToyTrainFontDefinition {
   fontFamily: string; // Specifies a name that will be used as the font face value for font properties
   source: string; // a URL or binary font data
 }
 
 interface FontPreloaderProps {
-  fonts: Array<FontDefinition>;
+  fonts: Array<ToyTrainFontDefinition>;
   onProgress?: (progress: number) => void;
   onReady(): void;
   hidden?: boolean;
 }
 
 interface FontPreloaderState {
-  fontsToLoad: Array<FontDefinition>;
+  fontsToLoad: Array<ToyTrainFontDefinition>;
 }
 
 export default class FontPreloader extends React.Component<

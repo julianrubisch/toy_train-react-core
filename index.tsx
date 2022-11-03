@@ -23,6 +23,7 @@ import ToyTrainFadeTransition from "./components/toy-train-fade-transition";
 import ToyTrainFullscreen from "./components/toy-train-fullscreen";
 import ToyTrainRotateTransition from "./components/toy-train-rotate-transition";
 import ToyTrainPreloaderWidget from "./components/preloader/toy-train-preloader-widget";
+import { ToyTrainFontDefinition } from "./components/preloader/font-preloader";
 
 enum GameState {
   Preloading,
@@ -94,6 +95,7 @@ export type {
   ToyTrainAnimatedCounterProps,
   ToyTrainAnimatedCounterState,
   ToyTrainContainerState,
+  ToyTrainFontDefinition,
 };
 
 export {

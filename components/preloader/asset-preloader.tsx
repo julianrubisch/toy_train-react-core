@@ -4,12 +4,12 @@ import styled from "styled-components";
 import ImagePreloader from "./image-preloader";
 import FontPreloader from "./font-preloader";
 import SoundPreloader from "./sound-preloader";
-import { FontDefinition } from "./font-preloader";
+import { ToyTrainFontDefinition } from "./font-preloader";
 
 export interface AssetPreloaderProps {
   images: Array<string>;
   sounds: Array<string>;
-  fonts: Array<FontDefinition>;
+  fonts: Array<ToyTrainFontDefinition>;
   onProgress?: (progress: number) => void;
   onFinished(): void;
 }
