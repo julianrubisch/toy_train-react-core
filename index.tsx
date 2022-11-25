@@ -21,9 +21,13 @@ import ToyTrainAnimatedCounter, {
 
 import ToyTrainFadeTransition from "./components/toy-train-fade-transition";
 import ToyTrainFullscreen from "./components/toy-train-fullscreen";
+import ToyTrainCountdownScreen from "./components/toy-train-countdown-screen";
 import ToyTrainRotateTransition from "./components/toy-train-rotate-transition";
 import ToyTrainPreloaderWidget from "./components/preloader/toy-train-preloader-widget";
 import { ToyTrainFontDefinition } from "./components/preloader/font-preloader";
+
+import * as ToyTrainTypography from "./components/toy-train-typography";
+import { HowlOptions } from "howler";
 
 enum GameState {
   Preloading,
@@ -66,6 +70,10 @@ interface ThemeTextStyles {
   fontSize?: string;
 }
 
+interface ThemeHeadlineStyles extends ThemeTextStyles {
+  textTransform?: string;
+}
+
 interface ThemeTimerStyles extends ThemeTextStyles {
   background?: string;
 }
@@ -76,17 +84,26 @@ interface ThemePaletteStyles {
   accent: string;
 }
 
+interface ThemeSounds {
+  buttonClick?: HowlOptions;
+  countdown?: HowlOptions;
+}
+
 export interface ToyTrainTheme {
   button: ThemeButtonStyles;
   text: ThemeTextStyles;
+  headline?: ThemeHeadlineStyles;
   timer: ThemeTimerStyles;
   animatedCounter: ThemeTextStyles;
   palette: ThemePaletteStyles;
+  introduction?: {
+    em: ThemeTextStyles;
+  };
+  sounds?: ThemeSounds;
 }
 
 export type {
   GameScore,
-  GameState,
   State,
   ToyTrainButtonProps,
   ToyTrainButtonState,
@@ -99,6 +116,7 @@ export type {
 };
 
 export {
+  GameState,
   ToyTrainButton,
   ToyTrainTimer,
   ToyTrainDefaultTheme,
@@ -107,5 +125,7 @@ export {
   ToyTrainAnimatedCounter,
   ToyTrainFullscreen,
   ToyTrainContainer,
+  ToyTrainCountdownScreen,
   ToyTrainPreloaderWidget,
+  ToyTrainTypography,
 };

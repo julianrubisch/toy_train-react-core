@@ -2,7 +2,12 @@ import * as React from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { Howl, Howler, HowlOptions } from "howler";
 
-import { ToyTrainTheme, ToyTrainDefaultTheme } from "../index";
+import {
+  ToyTrainTheme,
+  ToyTrainDefaultTheme,
+  ToyTrainTypography,
+} from "../index";
+import { Timer } from "./toy-train-typography";
 
 interface ToyTrainTimerProps {
   theme: ToyTrainTheme;
@@ -89,25 +94,10 @@ export default class ToyTrainTimer extends React.Component<
 
     return (
       <ThemeProvider theme={theme}>
-        <Timer>
+        <ToyTrainTypography.Timer>
           {format(minutes)}:{format(seconds)}
-        </Timer>
+        </ToyTrainTypography.Timer>
       </ThemeProvider>
     );
   }
 }
-
-const Timer = styled.div<ToyTrainTimerProps>`
-  background: ${(props) =>
-    props.theme.timer.background || props.theme.palette.background};
-  color: ${(props) => props.theme.timer.color || props.theme.palette.text};
-  font-family: ${(props) => props.theme.timer.fontFamily || "sans-serif"};
-  font-size: ${(props) => props.theme.timer.fontSize || "100px"};
-
-  position: absolute;
-  top: ${(props) => props.top || "310px"};
-  left: ${(props) => props.left || "0px"};
-  right: ${(props) => props.right || "0px"};
-
-  text-align: center;
-`;

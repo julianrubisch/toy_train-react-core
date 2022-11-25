@@ -9,7 +9,6 @@ interface ToyTrainButtonProps {
   y?: number;
   width?: number;
   theme: ToyTrainTheme;
-  sound?: HowlOptions;
   onClick?: () => void;
 }
 
@@ -28,7 +27,9 @@ export default class ToyTrainButton extends React.Component<
     super(props);
     this.state = {
       pressed: false,
-      sound: this.props.sound && new Howl({ html5: true, ...this.props.sound }),
+      sound:
+        this.props.theme.sounds.buttonClick &&
+        new Howl(this.props.theme.sounds.buttonClick),
     };
   }
 

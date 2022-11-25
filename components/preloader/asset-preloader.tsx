@@ -14,6 +14,12 @@ export interface AssetPreloaderProps {
   onFinished(): void;
 }
 
+export interface ToyTrainPreloadDefinitions {
+  images: Array<string>;
+  sounds: Array<string>;
+  fonts: Array<ToyTrainFontDefinition>;
+}
+
 interface AssetPreloaderState {
   imageProgress: number;
   fontProgress: number;
