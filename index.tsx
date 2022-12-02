@@ -82,6 +82,7 @@ interface ThemePaletteStyles {
   text: string;
   background: string;
   accent: string;
+  error: string;
 }
 
 interface ThemeSounds {
