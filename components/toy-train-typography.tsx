@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { ToyTrainTimerProps } from ".";
+import { ToyTrainTimerProps } from "..";
 
 export const Headline = styled.div`
   color: ${(props) => props.theme.headline.color};

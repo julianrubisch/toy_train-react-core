@@ -28,7 +28,7 @@ export default class ToyTrainButton extends React.Component<
     this.state = {
       pressed: false,
       sound:
-        this.props.theme.sounds.buttonClick &&
+        this.props.theme?.sounds?.buttonClick &&
         new Howl(this.props.theme.sounds.buttonClick),
     };
   }

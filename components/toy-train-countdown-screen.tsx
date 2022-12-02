@@ -5,7 +5,7 @@ import { Howl, Howler, HowlOptions } from "howler";
 import ToyTrainAnimatedCounter from "./toy-train-animated-counter";
 import ToyTrainFadeTransition from "./toy-train-fade-transition";
 import { Timer } from "./toy-train-typography";
-import { ToyTrainTheme } from ".";
+import { ToyTrainTheme } from "..";
 
 interface ToyTrainCountdownProps {
   onFinished: () => void;
@@ -20,7 +20,7 @@ export default class ToyTrainCountdownScreen extends React.Component<
     super(props);
     this.state = {
       sound:
-        this.props.theme.sounds.countdown &&
+        this.props.theme?.sounds?.countdown &&
         new Howl(this.props.theme.sounds.countdown),
     };
   }
