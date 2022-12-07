@@ -85,7 +85,7 @@ interface ThemePaletteStyles {
   error: string;
 }
 
-interface ThemeSounds {
+interface ToyTrainThemeSounds {
   buttonClick?: HowlOptions;
   countdown?: HowlOptions;
 }
@@ -100,7 +100,7 @@ export interface ToyTrainTheme {
   introduction?: {
     em: ThemeTextStyles;
   };
-  sounds?: ThemeSounds;
+  sounds?: ToyTrainThemeSounds;
 }
 
 export type {
@@ -114,6 +114,7 @@ export type {
   ToyTrainAnimatedCounterState,
   ToyTrainContainerState,
   ToyTrainFontDefinition,
+  ToyTrainThemeSounds,
 };
 
 export {
