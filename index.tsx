@@ -22,6 +22,7 @@ import ToyTrainAnimatedCounter, {
 import ToyTrainFadeTransition from "./components/toy-train-fade-transition";
 import ToyTrainFullscreen from "./components/toy-train-fullscreen";
 import ToyTrainCountdownScreen from "./components/toy-train-countdown-screen";
+import ToyTrainScoreScreen from "./components/toy-train-score-screen";
 import ToyTrainRotateTransition from "./components/toy-train-rotate-transition";
 import ToyTrainPreloaderWidget from "./components/preloader/toy-train-preloader-widget";
 import { ToyTrainFontDefinition } from "./components/preloader/font-preloader";
@@ -88,6 +89,7 @@ interface ThemePaletteStyles {
 interface ToyTrainThemeSounds {
   buttonClick?: HowlOptions;
   countdown?: HowlOptions;
+  congratulations?: HowlOptions;
 }
 
 export interface ToyTrainTheme {
@@ -99,6 +101,10 @@ export interface ToyTrainTheme {
   palette: ThemePaletteStyles;
   introduction?: {
     em: ThemeTextStyles;
+  };
+  score?: {
+    congratulations: ThemeTextStyles;
+    score: ThemeTextStyles;
   };
   sounds?: ToyTrainThemeSounds;
 }
@@ -128,6 +134,7 @@ export {
   ToyTrainFullscreen,
   ToyTrainContainer,
   ToyTrainCountdownScreen,
+  ToyTrainScoreScreen,
   ToyTrainPreloaderWidget,
   ToyTrainTypography,
 };

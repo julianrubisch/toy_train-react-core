@@ -62,3 +62,31 @@ export const Timer = styled.div<ToyTrainTimerProps>`
 
   text-align: center;
 `;
+
+export const Congratulations = styled.div`
+  color: ${(props) =>
+    props.theme.score.congratulations.color || props.theme.palette.text};
+  font-family: ${(props) =>
+    props.theme.score.congratulations.fontFamily || "sans-serif"};
+  font-size: ${(props) =>
+    props.theme.score.congratulations.fontSize || "150px"};
+
+  position: absolute;
+  top: 140px;
+  left: 0px;
+  right: 0px;
+  text-align: center;
+`;
+
+export const Score = styled.div`
+  color: ${(props) =>
+    props.theme.score.score.color || props.theme.palette.text};
+  font-family: ${(props) => props.theme.score.score.fontFamily || "sans-serif"};
+  font-size: ${(props) => props.theme.score.score.fontSize || "200px"};
+
+  position: absolute;
+  top: 300px;
+  left: 0px;
+  right: 0px;
+  text-align: center;
+`;
