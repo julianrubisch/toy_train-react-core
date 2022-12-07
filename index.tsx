@@ -47,6 +47,11 @@ interface GameScore {
   data?: any;
 }
 
+interface GameConfig {
+  name: string;
+  maxPoints: number;
+}
+
 interface State {
   gameState: GameState;
   score: GameScore;
@@ -111,6 +116,7 @@ export interface ToyTrainTheme {
 
 export type {
   GameScore,
+  GameConfig,
   State,
   ToyTrainButtonProps,
   ToyTrainButtonState,

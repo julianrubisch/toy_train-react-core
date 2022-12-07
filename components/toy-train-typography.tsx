@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { ToyTrainTimerProps } from "..";
 
 export const Headline = styled.div`
-  color: ${(props) => props.theme.headline.color};
+  color: ${(props) => props.theme.headline.color || props.theme.palette.text};
   font-size: 40px;
   font-family: ${(props) => props.theme.headline.fontFamily || "sans-serif"};
   text-transform: uppercase;
