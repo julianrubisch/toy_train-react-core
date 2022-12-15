@@ -117,10 +117,18 @@ export interface ToyTrainTheme {
   sounds?: ToyTrainThemeSounds;
 }
 
+interface ToyTrainQuestion {
+  question: string;
+  answers: Array<string>;
+  correct: number;
+  explanation: string;
+}
+
 export type {
   GameScore,
   GameConfig,
   State,
+  ToyTrainQuestion,
   ToyTrainButtonProps,
   ToyTrainButtonState,
   ToyTrainTimerProps,
