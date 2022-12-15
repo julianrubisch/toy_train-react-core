@@ -1,6 +1,6 @@
 {
   "name": "@julianrubisch/react-core",
-  "version": "0.1.21",
+  "version": "0.2.0",
   "description": "ToyTrain React base components",
   "source": "index.tsx",
   "main": "./dist/index.umd.js",

@@ -5,6 +5,9 @@ import ToyTrainButton, {
   ToyTrainButtonProps,
   ToyTrainButtonState,
 } from "./components/toy-train-button";
+
+import ToyTrainAnswerButton from "./components/toy-train-answer-button";
+
 import ToyTrainTimer, {
   ToyTrainTimerProps,
   ToyTrainTimerState,
@@ -133,6 +136,7 @@ export {
   GameState,
   ToyTrainButton,
   ToyTrainTimer,
+  ToyTrainAnswerButton,
   ToyTrainDefaultTheme,
   ToyTrainFadeTransition,
   ToyTrainRotateTransition,
