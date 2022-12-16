@@ -100,6 +100,11 @@ interface ToyTrainThemeSounds {
   congratulations?: HowlOptions;
 }
 
+enum IntroductionAlignment {
+  Full,
+  Left,
+}
+
 export interface ToyTrainTheme {
   button: ThemeButtonStyles;
   text: ThemeTextStyles;
@@ -109,6 +114,7 @@ export interface ToyTrainTheme {
   palette: ThemePaletteStyles;
   introduction?: {
     em: ThemeTextStyles;
+    align: IntroductionAlignment;
   };
   score?: {
     congratulations: ThemeTextStyles;
@@ -142,6 +148,7 @@ export type {
 
 export {
   GameState,
+  IntroductionAlignment,
   ToyTrainButton,
   ToyTrainTimer,
   ToyTrainAnswerButton,

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { ToyTrainTimerProps } from "..";
+import { ToyTrainTimerProps, IntroductionAlignment } from "../index";
 
 export const Headline = styled.div`
   color: ${(props) => props.theme.headline.color || props.theme.palette.text};
@@ -13,7 +13,10 @@ export const Headline = styled.div`
 export const IntroductionText = styled(Headline)`
   position: absolute;
   left: 0px;
-  right: 0px;
+  right: ${(props) =>
+    props.theme.introduction.align === IntroductionAlignment.Left
+      ? "765px"
+      : "0px"};
   top: 158px;
 
   display: flex;
@@ -27,7 +30,10 @@ export const IntroductionText = styled(Headline)`
     margin-top: 0px;
     margin-bottom: 40px;
 
-    width: 1542px;
+    width: ${(props) =>
+      props.theme.introduction.align === IntroductionAlignment.Left
+        ? "878px"
+        : "1542px"};
   }
 
   ul {
