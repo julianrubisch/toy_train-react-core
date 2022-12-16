@@ -94,7 +94,11 @@ export default class ToyTrainTimer extends React.Component<
 
     return (
       <ThemeProvider theme={theme}>
-        <ToyTrainTypography.Timer>
+        <ToyTrainTypography.Timer
+          top={this.props.top}
+          left={this.props.left}
+          right={this.props.right}
+        >
           {format(minutes)}:{format(seconds)}
         </ToyTrainTypography.Timer>
       </ThemeProvider>
