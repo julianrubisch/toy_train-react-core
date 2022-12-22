@@ -1,11 +1,13 @@
 import * as React from "react";
 
+import * as ToyTrainTypography from "./components/toy-train-typography";
 import { defaultTheme as ToyTrainDefaultTheme } from "./default-theme";
 import ToyTrainButton, {
   ToyTrainButtonProps,
   ToyTrainButtonState,
 } from "./components/toy-train-button";
 
+import ToyTrainQuestionBox from "./components/toy-train-question-box";
 import ToyTrainAnswerButton from "./components/toy-train-answer-button";
 
 import ToyTrainTimer, {
@@ -29,8 +31,6 @@ import ToyTrainScoreScreen from "./components/toy-train-score-screen";
 import ToyTrainRotateTransition from "./components/toy-train-rotate-transition";
 import ToyTrainPreloaderWidget from "./components/preloader/toy-train-preloader-widget";
 import { ToyTrainFontDefinition } from "./components/preloader/font-preloader";
-
-import * as ToyTrainTypography from "./components/toy-train-typography";
 import { HowlOptions } from "howler";
 
 enum GameState {
@@ -151,6 +151,7 @@ export {
   IntroductionAlignment,
   ToyTrainButton,
   ToyTrainTimer,
+  ToyTrainQuestionBox,
   ToyTrainAnswerButton,
   ToyTrainDefaultTheme,
   ToyTrainFadeTransition,
