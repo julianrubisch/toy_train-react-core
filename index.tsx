@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import { withRoot, ToyTrainRootProps } from "./components/toy-train-root";
+
 import * as ToyTrainTypography from "./components/toy-train-typography";
 import { defaultTheme as ToyTrainDefaultTheme } from "./default-theme";
 import ToyTrainButton, {
@@ -31,7 +33,18 @@ import ToyTrainScoreScreen from "./components/toy-train-score-screen";
 import ToyTrainRotateTransition from "./components/toy-train-rotate-transition";
 import ToyTrainPreloaderWidget from "./components/preloader/toy-train-preloader-widget";
 import { ToyTrainFontDefinition } from "./components/preloader/font-preloader";
+
 import { HowlOptions } from "howler";
+
+interface ToyTrainGameState {
+  gameState: GameState;
+  score: GameScore | undefined;
+}
+
+export abstract class ToyTrainGame<
+  P = any,
+  S = ToyTrainGameState
+> extends React.Component<P, S> {}
 
 enum GameState {
   Preloading,
@@ -131,6 +144,8 @@ interface ToyTrainQuestion {
 }
 
 export type {
+  ToyTrainGameState,
+  ToyTrainRootProps,
   GameScore,
   GameConfig,
   State,
@@ -163,4 +178,5 @@ export {
   ToyTrainScoreScreen,
   ToyTrainPreloaderWidget,
   ToyTrainTypography,
+  withRoot,
 };
