@@ -23,4 +23,5 @@ jobs:
           cache: yarn
       - name: Publish to NPM
         run: |
+          yarn install
           yarn push 
