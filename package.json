@@ -1,6 +1,6 @@
 {
   "name": "@toy_train/react-core",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "ToyTrain React base components",
   "source": "index.tsx",
   "main": "./dist/index.umd.js",

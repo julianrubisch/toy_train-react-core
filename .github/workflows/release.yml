@@ -14,14 +14,21 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Release
-        uses: softprops/action-gh-release@v1
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: '16'
           cache: yarn
-      - name: Publish to NPM
+      - name: Build
         run: |
           yarn install
+          yarn build
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            dist
+            package.json
+      - name: Publish to NPM
+        run: |
           yarn push 
