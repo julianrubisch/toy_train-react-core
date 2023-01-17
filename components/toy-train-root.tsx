@@ -27,7 +27,7 @@ export function withRoot<P>(Game: React.ComponentType<P & ToyTrainRootProps>) {
       Howler.volume(0.7);
     }
 
-    onGameFinished(score) {
+    async onGameFinished(score) {
       const newGameRecordForm = document.querySelector("#new_game_record");
       const formData = new FormData(newGameRecordForm as HTMLFormElement);
       for (const prop in score) {
@@ -37,9 +37,25 @@ export function withRoot<P>(Game: React.ComponentType<P & ToyTrainRootProps>) {
             : score[prop];
         formData.append(`game_record[${underscore(prop)}]`, serializedValue);
       }
-      post((newGameRecordForm as HTMLFormElement).getAttribute("action"), {
-        body: formData,
-      });
+
+      const response = await post(
+        (newGameRecordForm as HTMLFormElement).getAttribute("action"),
+        {
+          body: formData,
+          redirect: "manual",
+        }
+      );
+
+      if ((window as any).Turbo) {
+        if (response.redirected) {
+          (window as any).Turbo.visit(
+            new URL(response.url.toString(), document.baseURI)
+          );
+        }
+      } else {
+        // Turbolinks won't set response.redirected
+        window.location.href = response.headers.get("Location");
+      }
     }
 
     render() {
