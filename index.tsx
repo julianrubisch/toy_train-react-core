@@ -66,6 +66,7 @@ interface GameScore {
 interface GameConfig {
   name: string;
   maxPoints: number;
+  introduction: React.ReactFragment;
 }
 
 interface State {
