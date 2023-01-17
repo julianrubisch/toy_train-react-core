@@ -4,7 +4,10 @@ on:
   push:
     tags:
       - "v*.*.*"
- 
+
+permissions:
+  contents: write 
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -13,3 +16,11 @@ jobs:
         uses: actions/checkout@v2
       - name: Release
         uses: softprops/action-gh-release@v1
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: yarn
+      - name: Publish to NPM
+        run: |
+          yarn push 

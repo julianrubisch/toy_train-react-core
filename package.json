@@ -1,6 +1,6 @@
 {
-  "name": "@julianrubisch/react-core",
-  "version": "0.2.0",
+  "name": "@toy_train/react-core",
+  "version": "0.3.0",
   "description": "ToyTrain React base components",
   "source": "index.tsx",
   "main": "./dist/index.umd.js",
@@ -17,10 +17,9 @@
   "types": "dist/dist/index.d.ts",
   "typings": "dist/dist/index.d.ts",
   "author": "Julian Rubisch",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com",
-    "access": "restricted"
+    "access": "public"
   },
   "files": [
     "dist"
@@ -29,7 +28,7 @@
     "clean": "rm -rf dist",
     "build": "yarn run clean && rollup -c",
     "build:watch": "yarn run clean && rollup -wc",
-    "push": "yarn publish --no-git-tag-version"
+    "push": "yarn publish"
   },
   "peerDependencies": {
     "@rails/request.js": "^0.0.8",
