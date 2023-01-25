@@ -17,21 +17,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-          cache: yarn
-      - name: Build
-        run: |
-          name="$(git log -n 1 --format=format:%cn)"
-          email="$(git log -n 1 --format=format:%ce)"
-          git config --global user.name "$name"
-          git config --global user.email "$email"
-          yarn install
-          yarn build
-          git add dist
-          git commit -m "chore: Add dist folder"
       - name: Release
         uses: softprops/action-gh-release@v1
       - name: Publish to NPM
